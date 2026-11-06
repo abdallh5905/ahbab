@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="assets/tiktok-pixel.js?v=20261106" defer></script>
 <title>احباب الحرمين لرحلات العمرة - رحلتك إلى بيت الله تبدأ من هنا</title>
 <link href="https://ahbab-elharmin.online/" rel="canonical"/>
 <link href="favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -674,6 +675,13 @@
       '*نوع الرحلة:* ' + document.getElementById('bType').value + '\n' +
       '*عدد الأيام:* ' + document.getElementById('bDays').value + '\n\n' +
       'يرجى تأكيد التوفر والسعر';
+    if (window.AhbabTikTok) {
+      window.AhbabTikTok.trackWhatsApp({
+        id: 'umrah-booking',
+        name: 'حجز رحلة عمرة - ' + document.getElementById('bType').value,
+        type: 'product'
+      });
+    }
     window.open('https://wa.me/966561902357?text=' + encodeURIComponent(msg), '_blank');
   });
 </script>
